@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<link rel="shortcut icon" href="Vexora_v1-removebg-preview.png" type="image/x-icon">
+<html lang="en">
+    <link rel="stylesheet" href="css.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Vexora</title>
+</head>
+<body>
+    <div class="navbar">
+        <img draggable="false" style="margin-top: 17px;" src="Vexora_v1-removebg-preview.png" width="50" height="50" alt="">
+        <a href="index.html">
+            <h2 class="navbar-h2-h">Home</h2>
+        </a>
+        <a href="contact.html">
+            <h2 class="navbar-h2-c">Contact</h2>
+        </a>
+        <a href="shop.html">
+            <h2 class="navbar-h2-s">Shop</h2>
+        </a>
+        <a href="login.html">
+            <a href="login.html" class="navbar-h2-c"><h2>Login</h2></a>
+        </a>
+    </div>
+    <img draggable="false" style="margin-left: auto; margin-right: auto; display: block; user-select: none;" src="VEXORA_board.jpg" alt="" height="468px" width="960px">
+    <h2 class="heading" style="text-align: center; font-size: 75px; margin-top: 0px; margin-bottom: 25px;">JOIN US TODAY</h2>
+    <div class="section1">
+  <img alt="Slide In" class="slide-in" style="margin-left: 25px; border-radius: 17px;" src="image_5.png"width="671" height="357">
+
+  <div class="heading1">
+    <h2 class="tr">Our developers work hard to provide the best products imaginable! Buying a product shows love to our developers and embraces them to make higher quality products. So why not give it a shot?</h2>
+    <a href="shop.html">
+      <button class="btu">SHOP NOW</button>
+    </a>
+  </div>
+</div>
+
+</body>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  });
+
+  document.querySelectorAll('.slide-in').forEach(img => {
+    observer.observe(img);
+  });
+</script>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="Vexora_v1-removebg-preview.png" type="image/x-icon">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Vexora</title>
+  <link rel="shortcut icon" href="Vexora_v1-removebg-preview.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="dash.css"/>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <style>
+    .product1, .product2, .product3, .product4, .product5,
+    .product6, .product7, .product8, .product9, .product10,
+    .product11, .product12, .product13, .product14, .product15,
+    .product16, .product17, .product18, .product19, .product20 {
+      display: none; /* hide all by default */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <img draggable="false" style="margin-top: 17px;" src="Vexora_v1-removebg-preview.png" width="50" height="50" alt="">
+    <a href="index.html"><h2 class="navbar-h2-h">Home</h2></a>
+    <a href="contact.html"><h2 class="navbar-h2-c">Contact</h2></a>
+    <a href="shop.html"><h2 class="navbar-h2-s">Shop</h2></a>
+    <a href="login.html" class="navbar-h2-c"><h2>Login</h2></a>
+  </div>
+
+  <!-- Greeting -->
+<h2 class="heading" id="greeting"></h2>
+  <!-- Predefined Product 1 -->
+  <div class="product1">
+    <img draggable="false" class="p1img" src="Screenshot 2025-07-21 180207.png" alt="">
+    <h3 class="p1h3">A high quality, good priced airport. should defo buy.</h3>
+  </div>
+
+  <!-- Add product2 to product20 the same way, with unique content if needed -->
+
+  <script>
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyAZFCHlYN1pxtgiL_awMCfTFgVrx84fBuY",
+      authDomain: "vexora-68fb7.firebaseapp.com",
+      projectId: "vexora-68fb7",
+      storageBucket: "vexora-68fb7.firebasestorage.app",
+      messagingSenderId: "756975037451",
+      appId: "1:756975037451:web:365fc8c5fa7edf993beb0e",
+      measurementId: "G-8DJFLPCKWY"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    auth.onAuthStateChanged(async (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+        return;
+      }
+
+      try {
+        const doc = await db.collection("users").doc(user.uid).get();
+        if (!doc.exists) {
+          document.getElementById("greeting").textContent = "User data not found.";
+          return;
+        }
+
+        const data = doc.data();
+        const firstName = data.firstName || "User";
+        document.getElementById("greeting").textContent = `Hello ${firstName}! Here are your products:`;
+
+        // Show the appropriate product divs
+        for (let i = 1; i <= 20; i++) {
+          const key = `product${i}`;
+          if (data[key]) {
+            const el = document.querySelector(`.product${i}`);
+            if (el) el.style.display = "block";
+          }
+        }
+      } catch (err) {
+        console.error("Error loading user data:", err);
+        document.getElementById("greeting").textContent = "Error loading products.";
+      }
+    });
+  </script>
+</body>
+</html>

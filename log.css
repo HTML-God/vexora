@@ -1,0 +1,38 @@
+body {
+    background-color: #202020;
+}
+.container {
+    background-color: #191919;
+    padding: 2rem; 
+    border-radius: 12px;
+    width: 300px
+}
+.fd {
+    color: aliceblue;
+    text-align: center;
+    font-size: 35px;
+}
+input {
+    background-color: #191919;
+    box-shadow: none;
+    border-radius: 8px;
+    color: white;
+}
+button {
+    background-color: #191919;
+    box-shadow: none;
+    border-radius: 8px;
+}
+#message {
+    color: rgb(175, 160, 160);
+    font-size: 1.0em;
+    margin-top: 0.5rem;
+    border-radius: 7px;
+    padding: 5px 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    row-gap: 5px;
+}
+.newsOptIn {
+    display: flex;
+    font-size: 3px;
+}

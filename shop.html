@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Vexora</title>
+  <link rel="shortcut icon" href="Vexora_v1-removebg-preview.png" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      background-color: #202020;
+    }
+
+    a {
+      text-decoration: none;
+      color: aliceblue;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .navbar {
+    display: flex;
+    flex-direction: row; /* force horizontal */
+    align-items: center;
+    justify-content: space-between;
+    background-color: #191919;
+  padding: 10px 20px;
+  overflow-x: auto; /* allow scroll if too wide */
+  white-space: nowrap; /* prevent wrapping */
+  gap: 10px;
+}
+
+
+    .navbar img {
+      height: 50px;
+    }
+
+.navbar a h2 {
+  font-size: 18px;
+  margin: 0;
+  padding: 8px;
+  white-space: nowrap; /* prevent text wrap inside links */
+}
+
+
+    .navbar-h2-h:hover,
+    .navbar-h2-c:hover,
+    .navbar-h2-s:hover {
+      transform: scale(1.05);
+      text-decoration: underline;
+      text-decoration-color: aliceblue;
+    }
+
+    .acc {
+      height: 40px;
+      width: 40px;
+    }
+
+    .acc:hover {
+      transform: scale(1.05);
+    }
+
+    .heading {
+      margin: 20px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: aliceblue;
+      font-size: 48px;
+      text-align: center;
+    }
+
+    img.main-img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar a h2 {
+        font-size: 16px;
+      }
+
+      .heading {
+        font-size: 32px;
+        text-align: center;
+      }
+
+      .acc {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <img draggable="false" src="Vexora_v1-removebg-preview.png" alt="Logo">
+    <a href="index.html"><h2 class="navbar-h2-h">Home</h2></a>
+    <a href="contact.html"><h2 class="navbar-h2-c">Contact</h2></a>
+    <a href="shop.html"><h2 class="navbar-h2-s">Shop</h2></a>
+    <a href="login.html">
+      <a href="login.html" class="navbar-h2-c"><h2>Login</h2></a>
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <img draggable="false" class="main-img" src="VEXORA_board.jpg" alt="Coming Soon Banner">
+  <h2 class="heading">COMING SOON...</h2>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    background-color: #202020;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #191919;
+    padding: 10px 20px;
+}
+
+.navbar-h2-h,
+.navbar-h2-c,
+.navbar-h2-s {
+    display: flex;
+    padding: 8px;
+}
+
+.navbar-h2-h:hover,
+.navbar-h2-c:hover,
+.navbar-h2-s:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+    text-decoration-color: aliceblue;
+}
+
+.acc {
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.acc:hover {
+    transform: scale(1.05);
+}
+
+.heading {
+    margin: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    font-size: 36px;
+    text-align: center;
+}
+
+.product1 {
+    background-color: #191919;
+    padding: 12px;
+    width: 288px;
+    margin: 20px auto;
+    border-radius: 18px;
+    transition: transform 0.3s ease;
+}
+
+.product1:hover {
+    transform: scale(1.05);
+}
+
+.p1img {
+    width: 100%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    user-select: none;
+    display: block;
+}
+
+.p1h3 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    user-select: none;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .heading {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .p1h3 {
+        font-size: 14px;
+    }
+
+    .acc {
+        margin-top: 10px;
+    }
+}
